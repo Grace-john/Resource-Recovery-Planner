@@ -1,0 +1,59 @@
+<app-home-nav></app-home-nav>
+<div class="container">
+<h1 class="text-center">Registration</h1>
+
+    <form [formGroup]="registration" (ngSubmit)="register()">
+        
+        <div class="col-md-12">
+            <label>Name</label>
+            <input class="form-control" formControlName="fullname" id="fullname">
+            <div class="text-danger"  *ngIf="fullname && fullname.invalid && fullname.touched">Name is required</div>
+        </div>
+        <div class="col-md-12">
+            <label>Email</label>
+            <input class="form-control" formControlName="username" id="username">
+            <div class="text-danger" *ngIf="username && username.invalid && username.touched">Email is required</div>
+        </div>
+   
+    
+   
+        <div class="col-md-12">
+            <label>Phone</label>
+            <input class="form-control" formControlName="phone" id="phone">
+            <div class="text-danger" *ngIf="phone && phone.invalid && phone.touched">Phone number is required</div>
+        </div>
+      
+
+ 
+    
+        <div class="col-md-12">
+        <label>Password</label>
+          <input 
+            formControlName="password"
+            id="password" 
+            type="password" 
+            class="form-control">
+            <div class="text-danger" *ngIf="password && password.invalid && password.touched">Minimum length (6) is required</div>
+        </div>
+        <div class="col-md-12">
+            <label>Confirm Password</label>
+            <input 
+            formControlName="confirm_password"
+            id="confirm_password" 
+            type="password" 
+            class="form-control">
+            <div class="text-danger" *ngIf="confirm_password && confirm_password.invalid && confirm_password.touched">Password is required</div>
+            <div class="text-danger" *ngIf="registration.hasError('notSame')">Password not match</div>
+
+        </div>
+   
+   
+    <br>
+    <div class="col-md-12">
+        <button type="submit" [disabled]="!registration.valid" class="btn btn-block btn-primary">Submit</button>
+    </div>
+
+
+</form>
+</div>
+<app-footer></app-footer>
