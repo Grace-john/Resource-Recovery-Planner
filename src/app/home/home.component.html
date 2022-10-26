@@ -2,7 +2,7 @@
 <div class="container">
 <h1 class="text-center">Registration</h1>
 
-    <form [formGroup]="registration" (ngSubmit)="register()">
+    <form [formGroup]="registration" (ngSubmit)="register()" *ngIf="!reg">
         
         <div class="col-md-12">
             <label>Name</label>
@@ -53,7 +53,26 @@
         <button type="submit" [disabled]="!registration.valid" class="btn btn-block btn-primary">Submit</button>
     </div>
 
+    
+
 
 </form>
+<div class="card text-center" *ngIf="reg">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <h2 class="card-title text-success">Registration Successful</h2>
+      <p class="card-text">You are registered successfully with Disaster Management</p>
+      <a href="/#login" class="btn btn-primary">Login</a>
+    </div>
+    <div class="card-footer text-muted">
+      
+    </div>
+  </div>
+  <div class="col-md-12 text-center alert alert-danger" role="alert" *ngIf="alert">
+    <h3>User already exist!</h3>
+  {{msg}} 
+</div>
 </div>
 <app-footer></app-footer>
