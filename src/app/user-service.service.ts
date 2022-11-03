@@ -9,6 +9,7 @@ const AUTH_API = 'http://localhost:8000/api/';
 
 export class UserServiceService {
 
+  userid:any
   constructor(private http: HttpClient) { }
   register(user:any): Observable<any> {
     return this.http.post(AUTH_API + 'register',user);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
 
 @Component({
@@ -28,6 +29,9 @@ msg=""
     this.service.login({"email":this.loginform.value.username,"password":this.loginform.value.password}).subscribe((res:any)=>{
       console.log(res)
       this.alert=false
+      this.service.userid=res.email
+      
+      this.router.navigateByUrl("/user-dashboard")
      
       
     },error=>{
@@ -37,7 +41,7 @@ msg=""
     })
 
   }
-  constructor(private service:UserServiceService) { }
+  constructor(private service:UserServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }

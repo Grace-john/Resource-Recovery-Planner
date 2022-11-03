@@ -10,6 +10,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { UploaddataComponent } from './uploaddata/uploaddata.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserNavComponent } from './user-nav/user-nav.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PersonDetailsComponent } from './person-details/person-details.componen
     HomepageComponent,
     FooterComponent,
     UploaddataComponent,
-    PersonDetailsComponent
+    PersonDetailsComponent,
+    UserDashboardComponent,
+    UserNavComponent
   ],
   imports: [
     BrowserModule,
