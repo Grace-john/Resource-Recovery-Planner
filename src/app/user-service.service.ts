@@ -17,4 +17,7 @@ export class UserServiceService {
   login(user:any): Observable<any> {
     return this.http.post(AUTH_API + 'login',user);
   }
+  upload(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'uploaddata',data)
+  }
 }
