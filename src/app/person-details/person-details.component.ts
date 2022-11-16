@@ -10,10 +10,9 @@ import { UserServiceService } from '../user-service.service';
 export class PersonDetailsComponent implements OnInit {
 
   resource=new FormGroup({
-    district:new FormControl('',[Validators.required]),
-    resourcetype:new FormControl('',[Validators.required]),
-    city:new FormControl('',[Validators.required]),
-    resource_owner:new FormControl('',[Validators.required]),
+    resource_name:new FormControl('',[Validators.required]),
+    resource_quantity:new FormControl('',[Validators.required]),
+    resource_type:new FormControl('',[Validators.required]),
     email:new FormControl()
 
 
@@ -23,9 +22,14 @@ export class PersonDetailsComponent implements OnInit {
     //this.service.userid
     this.resource.value.email=this.service.userid
     console.log(this.resource.value)
-    this.service.upload(this.resource.value).subscribe((res:any)=>{
+    // this.service.upload(this.resource.value).subscribe((res:any)=>{
+    //   console.log(res)
+    //   alert(res.msg)
+    // })
+    this.service.addresource(this.resource.value).subscribe((res:any)=>{
       console.log(res)
-      alert(res.msg)
+      alert("Resource added successfully")
+      this.ngOnInit()
     })
     
   }

@@ -12,6 +12,11 @@ import { UploaddataComponent } from './uploaddata/uploaddata.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserNavComponent } from './user-nav/user-nav.component';
+import { VolunteerDashboardComponent } from './volunteer-dashboard/volunteer-dashboard.component';
+import { VolunteerNavComponent } from './volunteer-nav/volunteer-nav.component';
+import { ViewResourcesComponent } from './view-resources/view-resources.component';
+import { AddAlertComponent } from './add-alert/add-alert.component';
+import { ViewAlertComponent } from './view-alert/view-alert.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { UserNavComponent } from './user-nav/user-nav.component';
     UploaddataComponent,
     PersonDetailsComponent,
     UserDashboardComponent,
-    UserNavComponent
+    UserNavComponent,
+    VolunteerDashboardComponent,
+    VolunteerNavComponent,
+    ViewResourcesComponent,
+    AddAlertComponent,
+    ViewAlertComponent
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,15 @@ msg=""
       console.log(res)
       this.alert=false
       this.service.userid=res.email
+      if(res.usertype=="user"){
+        this.router.navigateByUrl("/user-dashboard")
+
+      }
+      if(res.usertype=="volunteer"){
+        this.router.navigateByUrl("/volunteer-dashboard")
+
+      }
       
-      this.router.navigateByUrl("/user-dashboard")
      
       
     },error=>{

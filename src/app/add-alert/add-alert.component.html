@@ -1,0 +1,40 @@
+<app-volunteer-nav></app-volunteer-nav>
+<div class="container">
+    <h3 class="text-center">
+        Add Alert
+    </h3>
+    <form [formGroup]="alert">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Alert Type</label>
+                <select class="form-control" formControlName="alert_type" required="">
+                    <option value="Warning">Warning</option>
+                    <option value="Shift from the area">Shift from the area</option>
+                    
+                </select>
+            
+            </div>
+            <div class="col-md-6">
+                <label>Alert Description</label>
+                <input type="text" class="form-control" formControlName="alert_description" required="" width="100" height="50">
+            </div>
+            <div class="col-md-6">
+                <label>Alert Place</label>
+                <input type="text" class="form-control" formControlName="alert_place" required="">
+            </div>
+            <div class="col-md-6">
+                <label>Alert Date</label>
+                <input type="date" class="form-control" formControlName="alert_date" required="">
+            </div>
+        </div>
+        <div class="row text-center">
+            
+           
+         
+            <div class="col-md-12">
+                <br><br>
+                <button type="submit" class="btn btn-primary" (click)="getDetails()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

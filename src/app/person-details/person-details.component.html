@@ -1,50 +1,33 @@
-<app-user-nav></app-user-nav>
+<app-volunteer-nav></app-volunteer-nav>
 <div class="container">
-    <h2 class="text-center">Volunteer Details</h2>
+    <h2 class="text-center">Add Resource</h2>
     <form [formGroup]="resource">
         <div class="row">
             <div class="col-md-6">
-                <label>District</label>
-                <input type="text" class="form-control" formControlName="district">
+                <label>Resource Type</label>
+                <select class="form-control" formControlName="resource_type">
+                    <option value="Equipments">Equipments</option>
+                    <option value="Vehicles">Vehicles</option>
+                    <option value="Food">Food</option>
+                    <option value="Others">Others</option>
+                </select>
+            
             </div>
             <div class="col-md-6">
-                <label>City</label>
-                <input type="text" class="form-control" formControlName="city">
+                <label>Resource Name</label>
+                <input type="text" class="form-control" formControlName="resource_name">
+            </div>
+            <div class="col-md-6">
+                <label>Resource Quantity</label>
+                <input type="number" class="form-control" formControlName="resource_quantity">
             </div>
         </div>
-        <div class="row">
+        <div class="row text-center">
             
-            <div class="col-md-6">
-                <label>Resource Type</label>
-                
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" formControlName="resourcetype" value="Ambulance" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                           Ambulance
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" formControlName="resourcetype" value="Boat" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                           Boat
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" formControlName="resourcetype" value="Crain" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                           Crain
-                        </label>
-                    </div>
-             
-                
-            
-              
-            </div>
-            <div class="col-md-6">
-                <label>Resource Owner</label>
-                <input type="text" class="form-control" formControlName="resource_owner">
-            </div>
-            <div class="col-md-6">
+           
+         
+            <div class="col-md-12">
+                <br><br>
                 <button class="btn btn-primary" (click)="getDetails()">Submit</button>
             </div>
         </div>

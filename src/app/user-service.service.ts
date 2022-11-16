@@ -20,4 +20,25 @@ export class UserServiceService {
   upload(data:any):Observable<any>{
     return this.http.post(AUTH_API+'uploaddata',data)
   }
+  public getDistrict(){
+
+    return this.http.post("https://countriesnow.space/api/v0.1/countries/state/cities",{
+      "country":"India",
+      "state":"Kerala"
+    })
+
+  }
+  addresource(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'add-resource',data)
+  }
+  viewallresource():Observable<any>{
+    return this.http.post(AUTH_API+'view-all-resource',{})
+  }
+  addalert(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'add-alert',data)
+  }
+  viewallalert():Observable<any>{
+    return this.http.post(AUTH_API+'view-all-alert',{})
+  }
+
 }

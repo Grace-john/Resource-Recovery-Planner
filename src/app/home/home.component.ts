@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 alert=false
 msg=""
 reg=false
+districts:any
   checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
     let pass = group.get('password')?.value
     let confirmPass = group.get('confirm_password')?.value
@@ -31,7 +32,13 @@ reg=false
       
       
     ]),
+    
+    house:new FormControl('',[Validators.required]),
+    place:new FormControl('',[Validators.required]),
    
+    pincode:new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(6)]),
+    usertype:new FormControl(),
+
     password:new FormControl('',[
       Validators.required,
       Validators.minLength(6)
@@ -45,6 +52,23 @@ reg=false
 
   get fullname(){
     return this.registration.get('fullname')
+
+  }
+  get house(){
+    return this.registration.get('house')
+
+  }
+  get place(){
+    return this.registration.get('place')
+
+  }
+  
+  get pincode(){
+    return this.registration.get('pincode')
+
+  }
+  get usertype(){
+    return this.registration.get('usertype')
 
   }
   get username(){
@@ -64,7 +88,7 @@ reg=false
   constructor(private service:UserServiceService) { }
   register(){
     console.log(this.registration.value)
-    this.service.register({"name":this.registration.value.fullname,"email":this.registration.value.username,"phone":this.registration.value.phone,"password":this.registration.value.password}).subscribe((res:any)=>{
+    this.service.register({"name":this.registration.value.fullname,"email":this.registration.value.username,"phone":this.registration.value.phone,"password":this.registration.value.password,"house":this.registration.value.house,"place":this.registration.value.place,"pincode":this.registration.value.pincode,"usertype":this.registration.value.usertype}).subscribe((res:any)=>{
       console.log(res)
       this.reg=true
     },error=>{
@@ -76,6 +100,10 @@ reg=false
   }
 
   ngOnInit(): void {
+    this.service.getDistrict().subscribe((res:any)=>{
+      console.log(res)
+      this.districts=res.data
+    })
   }
 
 }

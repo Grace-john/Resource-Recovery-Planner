@@ -3,49 +3,100 @@
 <h1 class="text-center">Registration</h1>
 
     <form [formGroup]="registration" (ngSubmit)="register()" *ngIf="!reg">
-        
-        <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Register as</label>
+          <div class="form-check">
+            <input type="radio" formControlName="usertype" value="user" class="form-check-input" >
+            <label class="form-check-label" for="flexRadioDefault1">
+              Common User
+            </label>
+           </div>
+           <div class="form-check">
+            <input type="radio" formControlName="usertype" value="volunteer" class="form-check-input">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Volunteer
+            </label>
+          </div>
+        </div>
+       
+          
+      </div>
+      <div class="row">
+          <div class="col-md-6">
             <label>Name</label>
             <input class="form-control" formControlName="fullname" id="fullname">
             <div class="text-danger"  *ngIf="fullname && fullname.invalid && fullname.touched">Name is required</div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
             <label>Email</label>
             <input class="form-control" formControlName="username" id="username">
             <div class="text-danger" *ngIf="username && username.invalid && username.touched">Email is required</div>
         </div>
+      </div>
+    <div class="row">
+        <div class="col-md-6">
+          <label>Phone</label>
+          <input class="form-control" formControlName="phone" id="phone">
+          <div class="text-danger" *ngIf="phone && phone.invalid && phone.touched">Phone number is required</div>
+      </div>
+      <div class="col-md-6">
+        <label>House Name</label>
+        <input class="form-control" formControlName="house" id="house">
+        <div class="text-danger" *ngIf="house && house.invalid && house.touched">House name is required</div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Place</label>
+        <select formControlName="place" class="form-control">
+          <option value disabled selected>Select Place</option>
+          <option value="{{d}}" *ngFor="let d of districts">{{d}}</option>
+      </select>
+      <div class="text-danger" *ngIf="place && place.invalid && place.touched">Place is required</div>
+    </div>
+    <div class="col-md-6">
+      <label>Pincode</label>
+      <input class="form-control" formControlName="pincode" id="pincode">
+      <div class="text-danger" *ngIf="pincode && pincode.invalid && pincode.touched">Pincode is required</div>
+    </div>
+    
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label>Password</label>
+        <input 
+          formControlName="password"
+          id="password" 
+          type="password" 
+          class="form-control">
+          <div class="text-danger" *ngIf="password && password.invalid && password.touched">Minimum length (6) is required</div>
+      </div>
+      <div class="col-md-6">
+          <label>Confirm Password</label>
+          <input 
+          formControlName="confirm_password"
+          id="confirm_password" 
+          type="password" 
+          class="form-control">
+          <div class="text-danger" *ngIf="confirm_password && confirm_password.invalid && confirm_password.touched">Password is required</div>
+          <div class="text-danger" *ngIf="registration.hasError('notSame')">Password not match</div>
+
+      </div>
+  </div>
+ 
+       
    
     
    
-        <div class="col-md-12">
-            <label>Phone</label>
-            <input class="form-control" formControlName="phone" id="phone">
-            <div class="text-danger" *ngIf="phone && phone.invalid && phone.touched">Phone number is required</div>
-        </div>
+       
       
 
  
     
-        <div class="col-md-12">
-        <label>Password</label>
-          <input 
-            formControlName="password"
-            id="password" 
-            type="password" 
-            class="form-control">
-            <div class="text-danger" *ngIf="password && password.invalid && password.touched">Minimum length (6) is required</div>
-        </div>
-        <div class="col-md-12">
-            <label>Confirm Password</label>
-            <input 
-            formControlName="confirm_password"
-            id="confirm_password" 
-            type="password" 
-            class="form-control">
-            <div class="text-danger" *ngIf="confirm_password && confirm_password.invalid && confirm_password.touched">Password is required</div>
-            <div class="text-danger" *ngIf="registration.hasError('notSame')">Password not match</div>
-
-        </div>
+       
    
    
     <br>
