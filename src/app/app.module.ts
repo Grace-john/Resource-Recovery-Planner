@@ -17,6 +17,7 @@ import { VolunteerNavComponent } from './volunteer-nav/volunteer-nav.component';
 import { ViewResourcesComponent } from './view-resources/view-resources.component';
 import { AddAlertComponent } from './add-alert/add-alert.component';
 import { ViewAlertComponent } from './view-alert/view-alert.component';
+import { AddPredictionDetailsComponent } from './add-prediction-details/add-prediction-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewAlertComponent } from './view-alert/view-alert.component';
     VolunteerNavComponent,
     ViewResourcesComponent,
     AddAlertComponent,
-    ViewAlertComponent
+    ViewAlertComponent,
+    AddPredictionDetailsComponent
   ],
   imports: [
     BrowserModule,

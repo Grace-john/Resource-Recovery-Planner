@@ -30,6 +30,7 @@ msg=""
       console.log(res)
       this.alert=false
       this.service.userid=res.email
+      this.service.uid=res._id
       if(res.usertype=="user"){
         this.router.navigateByUrl("/user-dashboard")
 

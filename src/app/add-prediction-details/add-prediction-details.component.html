@@ -1,0 +1,83 @@
+<app-user-nav></app-user-nav>
+<div class="container">
+    <h3 class="text-center">
+        Predict Chance of Flood
+    </h3>
+    <div class="container" *ngIf="result">
+        <h4 class="text-primary">{{prediction}}</h4>
+
+    </div>
+    
+    <form [formGroup]="rainfall" *ngIf="!result">
+       
+        <div class="row">
+            <div class="col-md-3">
+            
+                <label>Select Year</label>
+                <input type="number" class="form-control" min="1900" max="2099" step="1" formControlName="year">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in January</label>
+                <input type="number" step="0.01" class="form-control" formControlName="jan">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in February</label>
+                <input type="number" step="0.01" class="form-control" formControlName="feb">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in March</label>
+                <input type="number" step="0.01" class="form-control" formControlName="mar">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in April</label>
+                <input type="number" step="0.01" class="form-control" formControlName="apr">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in May</label>
+                <input type="number" step="0.01" class="form-control" formControlName="may">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in June</label>
+                <input type="number" step="0.01" class="form-control" formControlName="jun">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in July</label>
+                <input type="number" step="0.01" class="form-control" formControlName="jul">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in August</label>
+                <input type="number" step="0.01" class="form-control" formControlName="aug">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in September</label>
+                <input type="number" step="0.01" class="form-control" formControlName="sep">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in October</label>
+                <input type="number" step="0.01" class="form-control" formControlName="oct">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in November</label>
+                <input type="number" step="0.01" class="form-control" formControlName="nov">
+            </div>
+            <div class="col-md-3">
+            
+                <label>Average Rain Fall in December</label>
+                <input type="number" step="0.01" class="form-control" formControlName="dec">
+            </div>
+        </div>
+        <button class="btn btn-primary" [disabled]="!rainfall.valid" (click)="sendData()">Submit</button>
+       
+    </form>
+</div>

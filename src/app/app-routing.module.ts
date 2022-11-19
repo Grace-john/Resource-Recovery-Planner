@@ -9,6 +9,7 @@ import { UploaddataComponent } from './uploaddata/uploaddata.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ViewResourcesComponent } from './view-resources/view-resources.component';
 import { VolunteerDashboardComponent } from './volunteer-dashboard/volunteer-dashboard.component';
+import { AddPredictionDetailsComponent } from './add-prediction-details/add-prediction-details.component';
 
 const routes: Routes = [
   {path:'register',component:HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'volunteer-dashboard',component:VolunteerDashboardComponent},
   {path:'view-resource',component:ViewResourcesComponent},
   {path:'add-alert',component:AddAlertComponent},
-  {path:'view-all-alert',component:ViewAlertComponent}
+  {path:'view-all-alert',component:ViewAlertComponent},
+  {path:'add-prediction-details',component:AddPredictionDetailsComponent}
   
 
 ];

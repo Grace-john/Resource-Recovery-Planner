@@ -10,6 +10,7 @@ const AUTH_API = 'http://localhost:8000/api/';
 export class UserServiceService {
 
   userid:any
+  uid:any
   constructor(private http: HttpClient) { }
   register(user:any): Observable<any> {
     return this.http.post(AUTH_API + 'register',user);
@@ -31,6 +32,7 @@ export class UserServiceService {
   addresource(data:any):Observable<any>{
     return this.http.post(AUTH_API+'add-resource',data)
   }
+  
   viewallresource():Observable<any>{
     return this.http.post(AUTH_API+'view-all-resource',{})
   }
@@ -39,6 +41,12 @@ export class UserServiceService {
   }
   viewallalert():Observable<any>{
     return this.http.post(AUTH_API+'view-all-alert',{})
+  }
+  getprediction(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'getprediction',data)
+  }
+  deleteprediction(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'deleteprediction',data)
   }
 
 }
