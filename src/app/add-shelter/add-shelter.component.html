@@ -1,0 +1,42 @@
+<app-volunteer-nav></app-volunteer-nav>
+<div class="container">
+    <h2 class="text-center">Add Shelter</h2>
+   <form [formGroup]="shelter">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Shelter Place</label>
+            <input type="text" class="form-control" formControlName="shelter_place">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>Shelter Strength</label>
+            <input type="number" class="form-control" formControlName="shelter_strength">
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" [disabled]="!shelter.valid" (click)="addshelter()">Add</button>
+   </form>
+
+   <h3>Added Shelters</h3>
+   <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Shelter Place</th>
+        <th scope="col">Strength</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of shelters;index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{s.shelter_place}}</td>
+        <td>{{s.shelter_strength}}</td>
+      
+      </tr>
+      
+    </tbody>
+  </table>
+
+</div>

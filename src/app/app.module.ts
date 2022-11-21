@@ -18,6 +18,9 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
 import { AddAlertComponent } from './add-alert/add-alert.component';
 import { ViewAlertComponent } from './view-alert/view-alert.component';
 import { AddPredictionDetailsComponent } from './add-prediction-details/add-prediction-details.component';
+import { AddShelterComponent } from './add-shelter/add-shelter.component';
+import { ViewSheltersComponent } from './view-shelters/view-shelters.component';
+import { ViewMapComponent } from './view-map/view-map.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +38,17 @@ import { AddPredictionDetailsComponent } from './add-prediction-details/add-pred
     ViewResourcesComponent,
     AddAlertComponent,
     ViewAlertComponent,
-    AddPredictionDetailsComponent
+    AddPredictionDetailsComponent,
+    AddShelterComponent,
+    ViewSheltersComponent,
+    ViewMapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

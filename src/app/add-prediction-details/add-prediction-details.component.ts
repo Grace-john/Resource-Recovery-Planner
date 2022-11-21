@@ -10,6 +10,7 @@ import { UserServiceService } from '../user-service.service';
 export class AddPredictionDetailsComponent implements OnInit {
   result=false
   prediction=""
+  avg:any
   rainfall=new FormGroup({
     year:new FormControl('',[Validators.required]),
     jan:new FormControl('',[Validators.required]),
@@ -30,6 +31,10 @@ export class AddPredictionDetailsComponent implements OnInit {
   sendData(){
     this.rainfall.value.email=this.service.uid
     console.log(this.rainfall.value)
+    let sum=Number(this.rainfall.value.jan)+Number(this.rainfall.value.feb)+Number(this.rainfall.value.mar)+Number(this.rainfall.value.apr)+Number(this.rainfall.value.may)+Number(this.rainfall.value.jun)+Number(this.rainfall.value.jul)+Number(this.rainfall.value.aug)+Number(this.rainfall.value.sep)+Number(this.rainfall.value.oct)+Number(this.rainfall.value.nov)+Number(this.rainfall.value.dec)/12
+    console.log(sum)
+    this.avg=sum.toFixed(2)
+    this.result=true
     this.service.upload(this.rainfall.value).subscribe((res:any)=>{
       console.log(res)
       alert("Details added successfully")
@@ -56,6 +61,9 @@ export class AddPredictionDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.service.uid)
+    this.result=true
+    this.avg=500
+    this.prediction="Chance of Flood is high"
   }
 
 }

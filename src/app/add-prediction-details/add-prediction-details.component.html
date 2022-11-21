@@ -4,7 +4,40 @@
         Predict Chance of Flood
     </h3>
     <div class="container" *ngIf="result">
+        <h3>Average Rainfall {{avg}}</h3>
+        <div  *ngIf="avg<750">
+            <h3>Chance of Drought is high</h3>
+
+            <p>
+                Drought can limit the growing season and create conditions that encourage insect and disease infestation in certain crops. Low crop yields can result in rising food prices and shortages, potentially leading to malnutrition. Drought can also affect the health of livestock raised for food.
+                <br>
+                Reduced stream and river flows can increase the concentration of pollutants in water and cause stagnation. Higher water temperatures in lakes and reservoirs lead to reduced oxygen levels. These levels can affect fish and other aquatic life and water quality.
+                <br>
+                The dusty, dry conditions and wildfires that often accompany drought can harm health. Fire and dry soil and vegetation increase the number of particulates that are suspended in the air, such as pollen, smoke, and fluorocarbons. These substances can irritate the bronchial passages and lungs, making chronic respiratory illnesses like asthma worse. This can also increase the risk for acute respiratory infections like bronchitis and bacterial pneumonia.
+                <br>
+                Having water available for cleaning, sanitation, and hygiene reduces or controls many diseases. Drought conditions create the need to conserve water, but these conservation efforts should not get in the way of proper sanitation and hygiene.
+                <br>
+                People who engage in water-related recreational activities during drought may be at increased risk for waterborne disease caused by bacteria, protozoa, and other contaminants such as chemicals and heavy metals. Exposure can occur through accidentally or intentionally swallowing water, direct contact of contaminants with mucous membranes, or breathing in contaminants.
+                <br>
+                Increases in infectious disease can be a direct consequence of drought.
+
+Viruses, protozoa, and bacteria can pollute both groundwater and surface water when rainfall decreases. People who get their drinking water from private wells may be at higher risk for drought-related infectious disease. Other groups also at increased risk include those who have underlying chronic conditions.
+<br>
+Acute respiratory and gastrointestinal illnesses are more easily spread from person to person when hand washing is compromised by a perceived or real lack of available water. During water shortages, the risk for infectious disease increases when hygiene is not maintained.
+            </p>
+        </div>
+  
         <h4 class="text-primary">{{prediction}}</h4>
+        <div *ngIf="prediction=='Chance of Flood is high'">
+
+            <ul class="list-group">
+                <li class="list-group-item">Avoid building in flood prone areas unless you elevate and reinforce your home.</li>
+                <li class="list-group-item">Elevate the furnace, water heater, and electric panel if susceptible to flooding</li>
+                <li class="list-group-item">Install "Check Valves" in sewer traps to prevent floodwater from backing up into the drains of your home.</li>
+                <li class="list-group-item">Contact community officials to find out if they are planning to construct barriers (levees, beams and floodwalls) to stop floodwater from entering the homes in your area.</li>
+                <li class="list-group-item">Seal the walls in your basement with waterproofing compounds to avoid seepage.</li>
+              </ul>
+        </div>
 
     </div>
     

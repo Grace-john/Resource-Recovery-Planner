@@ -10,6 +10,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { ViewResourcesComponent } from './view-resources/view-resources.component';
 import { VolunteerDashboardComponent } from './volunteer-dashboard/volunteer-dashboard.component';
 import { AddPredictionDetailsComponent } from './add-prediction-details/add-prediction-details.component';
+import { AddShelterComponent } from './add-shelter/add-shelter.component';
+import { ViewSheltersComponent } from './view-shelters/view-shelters.component';
+import { ViewMapComponent } from './view-map/view-map.component';
 
 const routes: Routes = [
   {path:'register',component:HomeComponent},
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path:'view-resource',component:ViewResourcesComponent},
   {path:'add-alert',component:AddAlertComponent},
   {path:'view-all-alert',component:ViewAlertComponent},
-  {path:'add-prediction-details',component:AddPredictionDetailsComponent}
+  {path:'add-prediction-details',component:AddPredictionDetailsComponent},
+  {path:'add-shelters',component:AddShelterComponent},
+  {path:'view-all-shelters',component:ViewSheltersComponent},
+  {path:'view-map',component:ViewMapComponent}
   
 
 ];

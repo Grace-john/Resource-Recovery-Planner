@@ -48,5 +48,14 @@ export class UserServiceService {
   deleteprediction(data:any):Observable<any>{
     return this.http.post(AUTH_API+'deleteprediction',data)
   }
+  addshelter(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'add-shelter',data)
+  }
+  viewshelter(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'view-my-shelter',data)
+  }
+  viewallshelter(data:any):Observable<any>{
+    return this.http.post(AUTH_API+'view-all-shelter',{})
+  }
 
 }
